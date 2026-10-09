@@ -3,6 +3,12 @@ import {
   Palette,
   LayoutTemplate,
   MessageSquareQuote,
+  Building2,
+  HeartHandshake,
+  LineChart,
+  Cpu,
+  Home,
+  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 
@@ -15,9 +21,10 @@ export const SITE = {
 
 export const NAV_LINKS = [
   { label: "Capabilities", href: "#capabilities" },
-  { label: "Work", href: "#work" },
+  { label: "Domains", href: "#domains" },
   { label: "Process", href: "#process" },
   { label: "About", href: "#about" },
+  { label: "Work", href: "#work" },
   { label: "Contact", href: "#contact" },
 ] as const;
 
@@ -61,6 +68,58 @@ export const SERVICES: Service[] = [
     description:
       "Developer-focused messaging and visual storytelling that make infrastructure, APIs, and tooling feel inevitable.",
     icon: MessageSquareQuote,
+  },
+];
+
+export type IndustryDomain = {
+  id: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+};
+
+export const INDUSTRY_DOMAINS: IndustryDomain[] = [
+  {
+    id: "saas-devtools",
+    title: "B2B SaaS & DevTools",
+    description:
+      "Product marketing, docs-adjacent UI, and brand systems for APIs, CLIs, and infrastructure software.",
+    icon: Cpu,
+  },
+  {
+    id: "fintech-data",
+    title: "Fintech & Data Products",
+    description:
+      "Dashboards, listing feeds, and trust-forward interfaces where accuracy and scanability drive conversion.",
+    icon: LineChart,
+  },
+  {
+    id: "nonprofit",
+    title: "Nonprofits & Social Impact",
+    description:
+      "Donation flows, campaign storytelling, volunteer intake, and compliance-forward footers that build patron confidence.",
+    icon: HeartHandshake,
+  },
+  {
+    id: "health-wellness",
+    title: "Health & Community Programs",
+    description:
+      "Accessible programme pages, event-led content, and human-centered layouts for wellness and education initiatives.",
+    icon: Sparkles,
+  },
+  {
+    id: "proptech",
+    title: "Proptech & Marketplaces",
+    description:
+      "Search, filters, and detail views for property, auction, and classified experiences with high information density.",
+    icon: Home,
+  },
+  {
+    id: "enterprise",
+    title: "Enterprise & Scale-ups",
+    description:
+      "Positioning refreshes, design tokens, and launch surfaces for teams graduating from MVP to multi-product portfolios.",
+    icon: Building2,
   },
 ];
 

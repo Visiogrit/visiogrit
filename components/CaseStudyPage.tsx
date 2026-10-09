@@ -38,6 +38,10 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
           {study.name}
         </h1>
         <p className="mt-6 text-lg leading-relaxed text-slate-400">{study.overview}</p>
+        <p className="mt-4 text-sm text-slate-500">
+          Locale-specific programme copy, compliance labels, and market data appear on the
+          live build—not summarized here.
+        </p>
 
         <div
           className={`mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br ${study.gradient}`}

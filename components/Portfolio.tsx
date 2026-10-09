@@ -15,9 +15,9 @@ export function Portfolio() {
       />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
-          eyebrow="Selected Work"
-          title="Shipped products & platforms"
-          description="Real projects—nonprofit platforms, data tools, and studio brand work—designed and built end-to-end on Next.js and Vercel."
+          eyebrow="Evidence"
+          title="Shipped work"
+          description="A sample of live builds. Open a case study or visit the production URL for full product context and regional detail."
         />
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -56,7 +56,7 @@ export function Portfolio() {
                   </p>
                   <h3 className="mt-2 text-xl font-semibold text-white">{study.name}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
-                    {study.description}
+                    {study.cardDescription}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {study.tags.map((tag) => (

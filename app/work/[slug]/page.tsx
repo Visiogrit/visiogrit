@@ -17,10 +17,10 @@ export function generateMetadata({ params }: PageProps): Metadata {
 
   return {
     title: `${study.name} — Visiogrit`,
-    description: study.description,
+    description: study.cardDescription,
     openGraph: {
       title: `${study.name} — Visiogrit`,
-      description: study.description,
+      description: study.cardDescription,
     },
   };
 }
