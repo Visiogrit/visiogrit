@@ -77,10 +77,10 @@ export function Hero() {
               <ArrowRight className="h-4 w-4" aria-hidden />
             </a>
             <a
-              href="#capabilities"
+              href="/services"
               className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:border-cyan-400/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 sm:w-auto"
             >
-              View Capabilities
+              View Packages
             </a>
           </motion.div>
         </motion.div>

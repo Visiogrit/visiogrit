@@ -36,7 +36,7 @@ export function Navbar() {
         aria-label="Primary"
       >
         <a
-          href="#top"
+          href="/"
           className="group flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
         >
           <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-cyan-400/30 bg-cyan-400/10 text-sm font-bold text-cyan-400 shadow-glow-sm">
@@ -62,7 +62,7 @@ export function Navbar() {
 
         <div className="hidden md:block">
           <a
-            href="#contact"
+            href="/#contact"
             className="inline-flex items-center rounded-full bg-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition-all hover:bg-cyan-300 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0d14]"
           >
             Start a Project
@@ -104,7 +104,7 @@ export function Navbar() {
               ))}
               <li className="pt-2">
                 <a
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setOpen(false)}
                   className="flex w-full items-center justify-center rounded-full bg-cyan-400 px-4 py-3 text-sm font-semibold text-slate-950"
                 >

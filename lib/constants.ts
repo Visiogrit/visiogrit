@@ -6,12 +6,10 @@ export const SITE = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Capabilities", href: "#capabilities" },
-  { label: "Domains", href: "#domains" },
-  { label: "Process", href: "#process" },
-  { label: "About", href: "#about" },
-  { label: "Work", href: "#work" },
-  { label: "Contact", href: "#contact" },
+  { label: "Services", href: "/services" },
+  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Work", href: "/#work" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export type ProcessStep = {
