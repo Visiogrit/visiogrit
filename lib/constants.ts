@@ -64,49 +64,6 @@ export const SERVICES: Service[] = [
   },
 ];
 
-export type CaseStudy = {
-  id: string;
-  name: string;
-  category: string;
-  description: string;
-  tags: string[];
-  href: string;
-  gradient: string;
-};
-
-export const CASE_STUDIES: CaseStudy[] = [
-  {
-    id: "hyperlayer",
-    name: "Hyperlayer",
-    category: "Infrastructure Brand & Design System",
-    description:
-      "A full brand system and component library for a cloud infrastructure platform targeting platform engineers and SREs.",
-    tags: ["Brand System", "Figma", "Design Tokens"],
-    href: "#",
-    gradient: "from-cyan-500/30 via-slate-900 to-indigo-500/20",
-  },
-  {
-    id: "syntag-ai",
-    name: "Syntag AI",
-    category: "Developer Platform Identity & Web App",
-    description:
-      "Identity, marketing site, and product UI for an AI-native developer platform that turns complex workflows into clear product narrative.",
-    tags: ["Next.js", "Product UI", "Identity"],
-    href: "#",
-    gradient: "from-indigo-500/30 via-slate-900 to-cyan-400/20",
-  },
-  {
-    id: "codekits",
-    name: "CodeKits",
-    category: "Open-Source Tooling Brand & Landing Page",
-    description:
-      "Sharp visual identity and high-conversion landing experience for an open-source developer tooling suite.",
-    tags: ["Landing Page", "Open Source", "Brand"],
-    href: "#",
-    gradient: "from-sky-400/25 via-slate-900 to-violet-500/20",
-  },
-];
-
 export type ProcessStep = {
   number: string;
   title: string;
@@ -141,7 +98,11 @@ export const PROCESS_STEPS: ProcessStep[] = [
 ];
 
 export const SOCIAL_LINKS = [
-  { label: "GitHub", href: "https://github.com", icon: "github" as const },
+  {
+    label: "GitHub",
+    href: "https://github.com/Visiogrit",
+    icon: "github" as const,
+  },
   { label: "X / Twitter", href: "https://x.com", icon: "twitter" as const },
   { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" as const },
 ] as const;
