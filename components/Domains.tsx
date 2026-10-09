@@ -1,8 +1,26 @@
 "use client";
 
-import { INDUSTRY_DOMAINS } from "@/lib/constants";
+import {
+  Building2,
+  Cpu,
+  HeartHandshake,
+  Home,
+  LineChart,
+  Sparkles,
+  type LucideIcon,
+} from "lucide-react";
+import { INDUSTRY_DOMAINS, type DomainIconKey } from "@/lib/domains-data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlowCard } from "@/components/ui/GlowCard";
+
+const DOMAIN_ICONS: Record<DomainIconKey, LucideIcon> = {
+  cpu: Cpu,
+  chart: LineChart,
+  heart: HeartHandshake,
+  sparkles: Sparkles,
+  home: Home,
+  building: Building2,
+};
 
 export function Domains() {
   return (
@@ -20,7 +38,7 @@ export function Domains() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
           {INDUSTRY_DOMAINS.map((domain, index) => {
-            const Icon = domain.icon;
+            const Icon = DOMAIN_ICONS[domain.icon];
             return (
               <GlowCard key={domain.id} delay={index * 0.06}>
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-400">

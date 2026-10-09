@@ -1,8 +1,22 @@
 "use client";
 
-import { SERVICES } from "@/lib/constants";
+import {
+  Layers,
+  LayoutTemplate,
+  MessageSquareQuote,
+  Palette,
+  type LucideIcon,
+} from "lucide-react";
+import { SERVICES, type ServiceIconKey } from "@/lib/services-data";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { GlowCard } from "@/components/ui/GlowCard";
+
+const SERVICE_ICONS: Record<ServiceIconKey, LucideIcon> = {
+  palette: Palette,
+  layers: Layers,
+  layout: LayoutTemplate,
+  message: MessageSquareQuote,
+};
 
 export function Services() {
   return (
@@ -16,7 +30,7 @@ export function Services() {
 
         <div className="grid gap-4 sm:grid-cols-2 lg:gap-6">
           {SERVICES.map((service, index) => {
-            const Icon = service.icon;
+            const Icon = SERVICE_ICONS[service.icon];
             return (
               <GlowCard key={service.id} delay={index * 0.08}>
                 <div className="mb-5 flex items-start justify-between gap-4">
