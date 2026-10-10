@@ -20,7 +20,7 @@ export function Portfolio() {
           description="A sample of live builds. Open a case study or visit the production URL for full product context and regional detail."
         />
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2">
           {CASE_STUDIES.map((study, index) => (
             <motion.div
               key={study.id}

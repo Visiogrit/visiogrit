@@ -15,7 +15,7 @@ export type CaseStudy = {
   stack: string[];
 };
 
-export const CASE_STUDIES: CaseStudy[] = [
+const CLIENT_CASE_STUDIES: CaseStudy[] = [
   {
     id: "kanth-foundation",
     slug: "kanth-foundation",
@@ -88,7 +88,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     ],
     stack: ["Next.js", "Vercel", "Tailwind CSS", "Responsive UI"],
   },
-  {
+];
+
+const STUDIO_CASE_STUDY: CaseStudy = {
     id: "visiogrit",
     slug: "visiogrit",
     name: "Visiogrit",
@@ -111,8 +113,10 @@ export const CASE_STUDIES: CaseStudy[] = [
       "Custom domain deployment on Vercel",
     ],
     stack: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
-  },
-];
+};
+
+/** Client and product work first; studio site always last. */
+export const CASE_STUDIES: CaseStudy[] = [...CLIENT_CASE_STUDIES, STUDIO_CASE_STUDY];
 
 export function getCaseStudyBySlug(slug: string): CaseStudy | undefined {
   return CASE_STUDIES.find((study) => study.slug === slug);
