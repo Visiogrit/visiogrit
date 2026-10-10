@@ -65,6 +65,30 @@ export const CASE_STUDIES: CaseStudy[] = [
     stack: ["Next.js", "Vercel", "Data aggregation", "Tailwind CSS"],
   },
   {
+    id: "ssb-granites",
+    slug: "ssb-granites",
+    name: "SSB Granites",
+    category: "B2B Catalog & Marketing Site",
+    cardDescription:
+      "Product-led site for a granite supplier—hero carousel, category grid, testimonials, and contact paths built for trade buyers and homeowners.",
+    tags: ["Next.js", "B2B", "Catalog", "Vercel"],
+    gradient: "from-amber-500/25 via-slate-900 to-stone-500/20",
+    liveUrl: "https://ssbgranites.vercel.app/",
+    overview:
+      "A stone and surfaces supplier needed a credible web presence that showcases slab and tile lines, explains custom work, and drives product inquiries—not a generic brochure.",
+    challenge:
+      "Multiple product families and finishes had to feel premium and scannable on mobile, with clear paths from inspiration to contact without overwhelming the visitor.",
+    solution:
+      "Rotating hero highlights for flagship materials, category cards for slabs and tiles, an about block for trust, and social proof—wired to a simple navigation and footer contact pattern.",
+    outcomes: [
+      "Multi-slide hero showcasing signature granite lines",
+      "Product category structure for slabs, tiles, and custom work",
+      "Customer testimonials and about section for trade credibility",
+      "Deployed on Vercel with responsive layout",
+    ],
+    stack: ["Next.js", "Vercel", "Tailwind CSS", "Responsive UI"],
+  },
+  {
     id: "visiogrit",
     slug: "visiogrit",
     name: "Visiogrit",
