@@ -16,6 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://visiogrit.com"),
   title: "Visiogrit — Brand Systems for Tech & SaaS",
   description:
     "Precision visual identity, brand systems, and digital product design for technical founders, B2B SaaS, developer tools, and high-growth tech startups.",
@@ -28,6 +29,13 @@ export const metadata: Metadata = {
     "Visiogrit",
   ],
   authors: [{ name: "Visiogrit", url: "https://visiogrit.com" }],
+  icons: {
+    icon: [
+      { url: "/icon-light.png", media: "(prefers-color-scheme: light)" },
+      { url: "/icon.png", media: "(prefers-color-scheme: dark)" },
+    ],
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "Visiogrit — Brand Systems for Tech & SaaS",
     description:
@@ -35,6 +43,13 @@ export const metadata: Metadata = {
     url: "https://visiogrit.com",
     siteName: "Visiogrit",
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Visiogrit — Brand Systems for Tech & SaaS",
+    description:
+      "We translate complex software into unforgettable visual identities and design systems.",
   },
 };
 

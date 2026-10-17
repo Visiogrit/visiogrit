@@ -4,15 +4,16 @@ import { CaseStudyPage } from "@/components/CaseStudyPage";
 import { CASE_STUDIES, getCaseStudyBySlug } from "@/lib/case-studies";
 
 type PageProps = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export function generateStaticParams() {
   return CASE_STUDIES.map((study) => ({ slug: study.slug }));
 }
 
-export function generateMetadata({ params }: PageProps): Metadata {
-  const study = getCaseStudyBySlug(params.slug);
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const study = getCaseStudyBySlug(slug);
   if (!study) return { title: "Case study" };
 
   return {
@@ -25,8 +26,9 @@ export function generateMetadata({ params }: PageProps): Metadata {
   };
 }
 
-export default function WorkCaseStudyPage({ params }: PageProps) {
-  const study = getCaseStudyBySlug(params.slug);
+export default async function WorkCaseStudyPage({ params }: PageProps) {
+  const { slug } = await params;
+  const study = getCaseStudyBySlug(slug);
   if (!study) notFound();
 
   return <CaseStudyPage study={study} />;

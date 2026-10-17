@@ -16,6 +16,16 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+### Contact form (Formspree)
+
+Create a form at [formspree.io](https://formspree.io) and set the notification email to `work@visiogrit.com`. Add to `.env.local`:
+
+```bash
+FORMSPREE_FORM_ID=your_form_id
+```
+
+Use only the ID segment from `https://formspree.io/f/xxxx` (not the full URL). Without this variable, the contact form falls back to opening the visitor’s mail client.
+
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.

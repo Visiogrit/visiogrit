@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -14,7 +15,7 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
       <Navbar />
       <div className="min-h-screen bg-background pt-16">
         <header className="border-b border-border bg-background/90 backdrop-blur-xl">
-          <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4 sm:px-6">
+          <div className="mx-auto flex h-14 max-w-4xl items-center justify-between px-4 sm:px-6">
             <Link
               href="/#work"
               className="inline-flex items-center gap-2 text-sm text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
@@ -34,26 +35,51 @@ export function CaseStudyPage({ study }: CaseStudyPageProps) {
           </div>
         </header>
 
-        <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 md:py-16">
+        <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 md:py-16">
           <p className="font-mono text-xs uppercase tracking-[0.2em] text-accent">
             {study.category}
           </p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight text-foreground md:text-5xl">
             {study.name}
           </h1>
+          <p className="mt-2 text-sm text-muted">
+            <span className="font-medium text-foreground/90">Role:</span> {study.role}
+          </p>
           <p className="mt-6 text-lg leading-relaxed text-muted">{study.overview}</p>
           <p className="mt-4 text-sm text-muted/80">
-            Locale-specific programme copy, compliance labels, and market data appear on the
-            live build—not summarized here.
+            Locale-specific copy and market data appear on the live build. The UX patterns and design
+            system approach apply to global audiences in the same vertical.
           </p>
 
-          <div
-            className={`mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-gradient-to-br ${study.gradient}`}
-          >
-            <div className="flex h-full items-center justify-center bg-grid opacity-50">
-              <span className="text-3xl font-semibold text-foreground/80">{study.name}</span>
-            </div>
+          <div className="relative mt-10 aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-elevated">
+            <Image
+              src={study.coverImage}
+              alt={study.coverImageAlt}
+              fill
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+              className="object-cover object-top"
+            />
           </div>
+
+          {study.gallery.length > 1 ? (
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              {study.gallery.slice(1).map((image) => (
+                <div
+                  key={image.src}
+                  className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border"
+                >
+                  <Image
+                    src={image.src}
+                    alt={image.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, 400px"
+                    className="object-cover object-top"
+                  />
+                </div>
+              ))}
+            </div>
+          ) : null}
 
           <section className="mt-12 space-y-4">
             <h2 className="text-xl font-semibold text-foreground">Challenge</h2>

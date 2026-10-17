@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { HashLink } from "@/components/HashLink";
 import { motion } from "framer-motion";
 import { ArrowRight, Check, X } from "lucide-react";
 import {
@@ -54,12 +55,12 @@ export function HirePage() {
               Email to start
               <ArrowRight className="h-4 w-4" aria-hidden />
             </a>
-            <Link
+            <HashLink
               href="/#contact"
               className="inline-flex rounded-lg border border-border bg-elevated/50 px-6 py-3 text-sm font-semibold text-foreground hover:border-accent/40"
             >
               Contact form
-            </Link>
+            </HashLink>
           </motion.div>
         </div>
       </section>

@@ -3,11 +3,13 @@ export const SITE = {
   email: "work@visiogrit.com",
   tagline: "Vision + Grit",
   status: "Available for Q4 projects",
+  /** Set to a Calendly (or similar) URL to show “Book intro” on contact. */
+  calendlyUrl: "" as string,
 } as const;
 
 export const NAV_LINKS = [
   { label: "Services", href: "/services" },
-  { label: "Capabilities", href: "/#capabilities" },
+  { label: "Demos", href: "/demos" },
   { label: "Work", href: "/#work" },
   { label: "Contact", href: "/#contact" },
 ] as const;
@@ -21,27 +23,27 @@ export type ProcessStep = {
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     number: "01",
-    title: "Technical Audit & Deep Dive",
+    title: "Technical Audit & References",
     description:
-      "We absorb your product, architecture, and audience — from API surface area to founder narrative — before a single mark is drawn.",
+      "We align on product, audience, and 2–3 reference sites you admire—layout, density, and tone—before we design in code.",
   },
   {
     number: "02",
     title: "Architecture & Systemic Identity",
     description:
-      "We define the visual system: logo logic, type, color tokens, and the narrative scaffolding that scales with your product.",
+      "We define the visual system: type, color tokens, component patterns, and narrative scaffolding that scales with your product.",
   },
   {
     number: "03",
-    title: "High-Craft Execution & Tokenization",
+    title: "Design in Code on Staging",
     description:
-      "Precision delivery across brand assets, Figma systems, and digital surfaces — every component tokenized for reuse.",
+      "High-craft execution in Next.js on a real staging URL—responsive surfaces, motion where it helps, and tokens your team can extend.",
   },
   {
     number: "04",
     title: "Scale & Launch Support",
     description:
-      "Launch-ready guidelines, asset handoff, and ongoing support so your team can ship on-brand without friction.",
+      "Vercel deployment, SEO basics, handoff notes, and revision rounds so you launch on-brand without a slide deck lag.",
   },
 ];
 
@@ -51,14 +53,11 @@ export const SOCIAL_LINKS = [
     href: "https://github.com/Visiogrit",
     icon: "github" as const,
   },
-  { label: "X / Twitter", href: "https://x.com", icon: "twitter" as const },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "linkedin" as const },
 ] as const;
 
 export const BUDGET_RANGES = [
-  "Under $5k",
-  "$5k – $15k",
-  "$15k – $40k",
-  "$40k+",
+  "$5k – $10k",
+  "$10k – $20k",
+  "$20k+",
   "Not sure yet",
 ] as const;

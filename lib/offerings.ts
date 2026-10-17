@@ -1,6 +1,6 @@
 export const HIRE_PROFILE = {
   headline:
-    "Next.js developer — reference-led marketing sites for B2B SaaS & product teams",
+    "Brand systems for technical products — delivered in code on Next.js",
   shortAbout:
     "I turn reference sites and clear briefs into production marketing websites—design in code, fast staging URLs, and launch on Vercel. No separate Figma wireframe phase unless you need it as an add-on.",
   longAbout: `Visiogrit builds production-ready marketing and product surfaces for technical founders, SaaS companies, and mission-driven organizations.

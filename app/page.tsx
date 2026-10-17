@@ -1,10 +1,11 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Services } from "@/components/Services";
-import { Domains } from "@/components/Domains";
 import { Methodology } from "@/components/Methodology";
-import { Ethos } from "@/components/Ethos";
+import { TrustBand } from "@/components/TrustBand";
+import { DemosBand } from "@/components/demos/DemosBand";
 import { Portfolio } from "@/components/Portfolio";
+import { PackagesTeaser } from "@/components/PackagesTeaser";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 
@@ -15,10 +16,11 @@ export default function Home() {
       <main>
         <Hero />
         <Services />
-        <Domains />
         <Methodology />
-        <Ethos />
+        <TrustBand />
+        <DemosBand />
         <Portfolio />
+        <PackagesTeaser />
         <Contact />
       </main>
       <Footer />

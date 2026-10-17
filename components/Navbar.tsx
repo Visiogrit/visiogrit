@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+import { HashLink } from "@/components/HashLink";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
@@ -36,39 +38,43 @@ export function Navbar() {
         className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-2 px-4 sm:px-6 lg:px-8"
         aria-label="Primary"
       >
-        <a
+        <Link
           href="/"
-          className="group flex items-center gap-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+          className="truncate text-lg font-semibold tracking-tight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
         >
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-accent/30 bg-accent-muted text-sm font-bold text-accent shadow-glow-sm">
-            V
-          </span>
-          <span className="text-lg font-semibold tracking-tight text-foreground">
-            {SITE.name}
-          </span>
-        </a>
+          <span className="text-gradient-accent">{SITE.name}</span>
+        </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              <a
-                href={link.href}
-                className="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
-              >
-                {link.label}
-              </a>
+              {link.href.startsWith("/#") ? (
+                <HashLink
+                  href={link.href}
+                  className="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+                >
+                  {link.label}
+                </HashLink>
+              ) : (
+                <Link
+                  href={link.href}
+                  className="rounded-lg px-3 py-2 text-sm text-muted transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
+                >
+                  {link.label}
+                </Link>
+              )}
             </li>
           ))}
         </ul>
 
         <div className="hidden items-center gap-2 md:flex">
           <ThemeToggle />
-          <a
+          <HashLink
             href="/#contact"
             className="inline-flex items-center rounded-lg bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-all hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
             Start a Project
-          </a>
+          </HashLink>
         </div>
 
         <div className="flex items-center gap-2 md:hidden">
@@ -98,23 +104,33 @@ export function Navbar() {
             <ul className="flex flex-col gap-1 px-4 py-4">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
-                  <a
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-3 text-base text-muted transition-colors hover:bg-elevated hover:text-foreground"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.startsWith("/#") ? (
+                    <HashLink
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-lg px-3 py-3 text-base text-muted transition-colors hover:bg-elevated hover:text-foreground"
+                    >
+                      {link.label}
+                    </HashLink>
+                  ) : (
+                    <Link
+                      href={link.href}
+                      onClick={() => setOpen(false)}
+                      className="block rounded-lg px-3 py-3 text-base text-muted transition-colors hover:bg-elevated hover:text-foreground"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
               <li className="pt-2">
-                <a
+                <HashLink
                   href="/#contact"
                   onClick={() => setOpen(false)}
                   className="flex w-full items-center justify-center rounded-lg bg-accent px-4 py-3 text-sm font-semibold text-accent-foreground"
                 >
                   Start a Project
-                </a>
+                </HashLink>
               </li>
             </ul>
           </motion.div>
