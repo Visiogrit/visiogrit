@@ -31,6 +31,7 @@ export function Domains() {
       />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
+          index="03"
           eyebrow="Domains"
           title="Industries we design for"
           description="Flexible across verticals—same rigor for SaaS dashboards, nonprofit trust surfaces, and data-heavy product UIs."
@@ -40,14 +41,14 @@ export function Domains() {
           {INDUSTRY_DOMAINS.map((domain, index) => {
             const Icon = DOMAIN_ICONS[domain.icon];
             return (
-              <GlowCard key={domain.id} delay={index * 0.06}>
-                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-400">
+              <GlowCard key={domain.id} delay={index * 0.03}>
+                <span className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-accent/25 bg-accent-muted text-accent">
                   <Icon className="h-5 w-5" aria-hidden />
                 </span>
-                <h3 className="mt-4 text-lg font-semibold tracking-tight text-white">
+                <h3 className="mt-4 text-lg font-semibold tracking-tight text-foreground">
                   {domain.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">
+                <p className="mt-2 text-sm leading-relaxed text-muted">
                   {domain.description}
                 </p>
               </GlowCard>

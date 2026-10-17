@@ -5,6 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/demos/devtools", "/demos/stone-gallery", "/demos/pizzeria", "/demos/automotive"],
     },
     sitemap: "https://visiogrit.com/sitemap.xml",
   };

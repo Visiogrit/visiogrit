@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { Providers } from "@/components/Providers";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -15,6 +16,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://visiogrit.com"),
   title: "Visiogrit — Brand Systems for Tech & SaaS",
   description:
     "Precision visual identity, brand systems, and digital product design for technical founders, B2B SaaS, developer tools, and high-growth tech startups.",
@@ -27,6 +29,13 @@ export const metadata: Metadata = {
     "Visiogrit",
   ],
   authors: [{ name: "Visiogrit", url: "https://visiogrit.com" }],
+  icons: {
+    icon: [
+      { url: "/icon-light.png", media: "(prefers-color-scheme: light)" },
+      { url: "/icon.png", media: "(prefers-color-scheme: dark)" },
+    ],
+    apple: "/apple-icon.png",
+  },
   openGraph: {
     title: "Visiogrit — Brand Systems for Tech & SaaS",
     description:
@@ -34,12 +43,22 @@ export const metadata: Metadata = {
     url: "https://visiogrit.com",
     siteName: "Visiogrit",
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Visiogrit — Brand Systems for Tech & SaaS",
+    description:
+      "We translate complex software into unforgettable visual identities and design systems.",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0a0d14",
-  colorScheme: "dark",
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f6f3ec" },
+    { media: "(prefers-color-scheme: dark)", color: "#0a0d14" },
+  ],
+  colorScheme: "light dark",
 };
 
 export default function RootLayout({
@@ -48,11 +67,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-[#0a0d14] font-sans text-white antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-background font-sans text-foreground antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
