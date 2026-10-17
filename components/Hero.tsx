@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import { HeroSceneLazy } from "@/components/three/HeroSceneLazy";
 
 const container = {
   hidden: { opacity: 0 },
@@ -24,14 +25,11 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative flex min-h-screen items-center overflow-hidden pt-16"
+      className="relative flex min-h-screen items-center overflow-hidden bg-grain pt-16"
     >
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-radial-glow" />
-      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-60" />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute left-1/2 top-1/3 h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-cyan-400/10 blur-3xl animate-pulse-slow"
-      />
+      <HeroSceneLazy />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-radial-glow opacity-70" />
+      <div aria-hidden className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
 
       <div className="relative z-10 mx-auto w-full max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
         <motion.div
@@ -41,25 +39,22 @@ export function Hero() {
           className="mx-auto flex max-w-3xl flex-col items-center text-center"
         >
           <motion.div variants={item}>
-            <span className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-1.5 text-xs font-medium text-cyan-300 shadow-glow-sm sm:text-sm">
-              <Sparkles className="h-3.5 w-3.5" aria-hidden />
-              Visiogrit Studio — Brand Systems for Tech &amp; SaaS
+            <span className="inline-flex items-center gap-2 rounded-md border border-border bg-elevated/80 px-4 py-2 font-mono text-[11px] uppercase tracking-[0.22em] text-accent sm:text-xs">
+              VG / 01 — Studio
             </span>
           </motion.div>
 
           <motion.h1
             variants={item}
-            className="mt-8 text-balance text-4xl font-semibold tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+            className="mt-8 text-balance text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl"
           >
             Precision Brand Identities for{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
-              High-Tech Products.
-            </span>
+            <span className="text-gradient-accent">High-Tech Products.</span>
           </motion.h1>
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-slate-400 sm:text-lg md:text-xl"
+            className="mt-6 max-w-2xl text-balance text-base leading-relaxed text-muted sm:text-lg md:text-xl"
           >
             We translate complex software, developer infrastructure, and technical
             platforms into unforgettable visual identities and design systems.
@@ -71,14 +66,14 @@ export function Hero() {
           >
             <a
               href="#contact"
-              className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-cyan-400 px-6 py-3.5 text-sm font-semibold text-slate-950 transition-all hover:bg-cyan-300 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0a0d14] sm:w-auto"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground shadow-glow-sm transition-all hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
             >
               Start a Project
               <ArrowRight className="h-4 w-4" aria-hidden />
             </a>
             <a
               href="/services"
-              className="inline-flex w-full items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition-all hover:border-cyan-400/40 hover:bg-white/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 sm:w-auto"
+              className="inline-flex w-full items-center justify-center rounded-lg border border-border bg-elevated/60 px-6 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-accent/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 sm:w-auto"
             >
               View Packages
             </a>
@@ -88,7 +83,7 @@ export function Hero() {
 
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0a0d14] to-transparent"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[var(--hero-fade)] to-transparent"
       />
     </section>
   );

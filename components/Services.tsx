@@ -23,6 +23,7 @@ export function Services() {
     <section id="capabilities" className="relative scroll-mt-20 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
+          index="02"
           eyebrow="Capabilities"
           title="What we engineer for tech teams"
           description="End-to-end brand and product design systems for founders who ship infrastructure, platforms, and developer tools."
@@ -32,17 +33,17 @@ export function Services() {
           {SERVICES.map((service, index) => {
             const Icon = SERVICE_ICONS[service.icon];
             return (
-              <GlowCard key={service.id} delay={index * 0.08}>
+              <GlowCard key={service.id} delay={index * 0.04}>
                 <div className="mb-5 flex items-start justify-between gap-4">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-400 transition-shadow group-hover:shadow-glow-sm">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-accent/25 bg-accent-muted text-accent transition-shadow group-hover:shadow-glow-sm dark:group-hover:shadow-glow-sm">
                     <Icon className="h-5 w-5" aria-hidden />
                   </span>
-                  <span className="font-mono text-sm text-slate-600">{service.number}</span>
+                  <span className="font-mono text-sm text-muted/60">{service.number}</span>
                 </div>
-                <h3 className="text-xl font-semibold tracking-tight text-white">
+                <h3 className="text-xl font-semibold tracking-tight text-foreground">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400 md:text-base">
+                <p className="mt-3 text-sm leading-relaxed text-muted md:text-base">
                   {service.description}
                 </p>
               </GlowCard>

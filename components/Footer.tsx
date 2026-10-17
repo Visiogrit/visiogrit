@@ -32,16 +32,18 @@ const iconMap = {
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#07090f]">
+    <footer className="border-t border-border bg-footer">
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:px-8">
         <div className="space-y-2">
-          <p className="text-sm text-slate-400">{SITE.name} © 2026</p>
-          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 px-3 py-1">
+          <p className="text-sm text-muted">{SITE.name} © 2026</p>
+          <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 dark:border-emerald-400/20 dark:bg-emerald-400/10">
             <span
               aria-hidden
-              className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400"
+              className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-600 dark:bg-emerald-400"
             />
-            <span className="text-xs font-medium text-emerald-300">{SITE.status}</span>
+            <span className="text-xs font-medium text-emerald-800 dark:text-emerald-300">
+              {SITE.status}
+            </span>
           </div>
         </div>
 
@@ -55,7 +57,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-400 transition-colors hover:border-cyan-400/40 hover:text-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                  className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-elevated/60 text-muted transition-colors hover:border-accent/40 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60"
                 >
                   <Icon className="h-4 w-4" />
                 </a>

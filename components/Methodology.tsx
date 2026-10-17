@@ -9,6 +9,7 @@ export function Methodology() {
     <section id="process" className="relative scroll-mt-20 py-24 md:py-32">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
+          index="04"
           eyebrow="Methodology"
           title="The Visiogrit process"
           description="A structured path from technical understanding to launch-ready brand systems."
@@ -21,22 +22,22 @@ export function Methodology() {
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: index * 0.1, ease: "easeOut" }}
-              className="relative rounded-2xl border border-white/10 bg-elevated/80 p-6"
+              transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
+              className="relative rounded-2xl border border-border bg-elevated/80 p-6"
             >
-              <span className="font-mono text-3xl font-semibold text-cyan-400/30">
+              <span className="font-mono text-3xl font-semibold text-accent/30">
                 {step.number}
               </span>
-              <h3 className="mt-4 text-lg font-semibold tracking-tight text-white">
+              <h3 className="mt-4 text-lg font-semibold tracking-tight text-foreground">
                 {step.title}
               </h3>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400">
+              <p className="mt-3 text-sm leading-relaxed text-muted">
                 {step.description}
               </p>
               {index < PROCESS_STEPS.length - 1 ? (
                 <span
                   aria-hidden
-                  className="absolute -right-3 top-1/2 hidden h-px w-5 bg-gradient-to-r from-cyan-400/40 to-transparent lg:block"
+                  className="absolute -right-3 top-1/2 hidden h-px w-5 bg-gradient-to-r from-accent/40 to-transparent lg:block"
                 />
               ) : null}
             </motion.li>

@@ -15,6 +15,7 @@ export function Portfolio() {
       />
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
+          index="06"
           eyebrow="Evidence"
           title="Shipped work"
           description="A sample of live builds. Open a case study or visit the production URL for full product context and regional detail."
@@ -27,11 +28,11 @@ export function Portfolio() {
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.45, delay: index * 0.1, ease: "easeOut" }}
+              transition={{ duration: 0.4, delay: index * 0.05, ease: "easeOut" }}
             >
               <Link
                 href={`/work/${study.slug}`}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-slate-950/60 transition-all duration-300 hover:border-cyan-400/40 hover:shadow-glow focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:border-accent/40 hover:shadow-card focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 dark:hover:shadow-glow"
               >
                 <div
                   className={`relative aspect-[16/10] overflow-hidden bg-gradient-to-br ${study.gradient}`}
@@ -41,28 +42,28 @@ export function Portfolio() {
                     className="absolute inset-0 bg-grid opacity-40 transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 flex items-center justify-center px-4 text-center">
-                    <span className="text-2xl font-semibold tracking-tight text-white/90 transition-transform duration-500 group-hover:scale-105">
+                    <span className="text-2xl font-semibold tracking-tight text-foreground/90 transition-transform duration-500 group-hover:scale-105">
                       {study.name}
                     </span>
                   </div>
-                  <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-white/15 bg-black/40 text-white opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
+                  <div className="absolute right-3 top-3 flex h-9 w-9 items-center justify-center rounded-full border border-border bg-background/60 text-foreground opacity-0 backdrop-blur transition-opacity group-hover:opacity-100">
                     <ArrowUpRight className="h-4 w-4" aria-hidden />
                   </div>
                 </div>
 
                 <div className="flex flex-1 flex-col p-5 md:p-6">
-                  <p className="text-xs font-medium uppercase tracking-wider text-cyan-400/90">
+                  <p className="text-xs font-medium uppercase tracking-wider text-accent">
                     {study.category}
                   </p>
-                  <h3 className="mt-2 text-xl font-semibold text-white">{study.name}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-400">
+                  <h3 className="mt-2 text-xl font-semibold text-foreground">{study.name}</h3>
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-muted">
                     {study.cardDescription}
                   </p>
                   <div className="mt-4 flex flex-wrap gap-2">
                     {study.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md border border-white/10 bg-white/5 px-2 py-1 text-xs text-slate-300"
+                        className="rounded-md border border-border bg-elevated/80 px-2 py-1 text-xs text-muted"
                       >
                         {tag}
                       </span>

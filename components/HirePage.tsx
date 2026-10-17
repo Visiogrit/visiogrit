@@ -15,13 +15,13 @@ import { CopyEmailButton } from "@/components/ui/CopyEmailButton";
 export function HirePage() {
   return (
     <div className="pt-16">
-      <section className="relative overflow-hidden border-b border-white/10 py-16 md:py-24">
+      <section className="relative overflow-hidden border-b border-border py-16 md:py-24">
         <div aria-hidden className="pointer-events-none absolute inset-0 bg-radial-glow" />
         <div className="relative mx-auto max-w-3xl px-4 text-center sm:px-6">
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="font-mono text-xs uppercase tracking-[0.2em] text-cyan-400"
+            className="font-mono text-xs uppercase tracking-[0.2em] text-accent"
           >
             Services &amp; packages
           </motion.p>
@@ -29,7 +29,7 @@ export function HirePage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.05 }}
-            className="mt-4 text-balance text-4xl font-semibold tracking-tight text-white md:text-5xl"
+            className="mt-4 text-balance text-4xl font-semibold tracking-tight text-foreground md:text-5xl"
           >
             {HIRE_PROFILE.headline}
           </motion.h1>
@@ -37,7 +37,7 @@ export function HirePage() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mt-6 text-lg leading-relaxed text-slate-400"
+            className="mt-6 text-lg leading-relaxed text-muted"
           >
             {HIRE_PROFILE.shortAbout}
           </motion.p>
@@ -49,14 +49,14 @@ export function HirePage() {
           >
             <a
               href={`mailto:${SITE.email}?subject=Project%20inquiry`}
-              className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 hover:bg-cyan-300"
+              className="inline-flex items-center gap-2 rounded-lg bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground hover:opacity-90"
             >
               Email to start
               <ArrowRight className="h-4 w-4" aria-hidden />
             </a>
             <Link
               href="/#contact"
-              className="inline-flex rounded-full border border-white/15 px-6 py-3 text-sm font-semibold text-white hover:border-cyan-400/40"
+              className="inline-flex rounded-lg border border-border bg-elevated/50 px-6 py-3 text-sm font-semibold text-foreground hover:border-accent/40"
             >
               Contact form
             </Link>
@@ -66,17 +66,17 @@ export function HirePage() {
 
       <section className="py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 className="text-2xl font-semibold text-white">About (for Contra / proposals)</h2>
-          <p className="mt-4 whitespace-pre-line text-base leading-relaxed text-slate-400">
+          <h2 className="text-2xl font-semibold text-foreground">About (for Contra / proposals)</h2>
+          <p className="mt-4 whitespace-pre-line text-base leading-relaxed text-muted">
             {HIRE_PROFILE.longAbout}
           </p>
           <CopyEmailButton className="mt-6" />
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.02] py-16 md:py-20">
+      <section className="border-y border-border bg-elevated/30 py-16 md:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-semibold text-white md:text-3xl">
+          <h2 className="text-center text-2xl font-semibold text-foreground md:text-3xl">
             How we collaborate
           </h2>
           <div className="mt-10 grid gap-6 md:grid-cols-3">
@@ -87,10 +87,10 @@ export function HirePage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="rounded-2xl border border-white/10 bg-slate-950/50 p-6"
+                className="rounded-2xl border border-border bg-card p-6"
               >
-                <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-slate-400">
+                <h3 className="text-lg font-semibold text-foreground">{item.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-muted">
                   {item.description}
                 </p>
               </motion.div>
@@ -101,10 +101,10 @@ export function HirePage() {
 
       <section className="py-16 md:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-2xl font-semibold text-white md:text-3xl">
+          <h2 className="text-center text-2xl font-semibold text-foreground md:text-3xl">
             Packages
           </h2>
-          <p className="mx-auto mt-3 max-w-xl text-center text-slate-400">
+          <p className="mx-auto mt-3 max-w-xl text-center text-muted">
             USD pricing for US and international clients. 50% deposit to start; balance on
             launch unless otherwise agreed.
           </p>
@@ -118,19 +118,19 @@ export function HirePage() {
                 transition={{ delay: index * 0.1 }}
                 className={`flex flex-col rounded-2xl border p-6 md:p-8 ${
                   pkg.id === "marketing-site"
-                    ? "border-cyan-400/40 bg-cyan-400/5 shadow-glow-sm"
-                    : "border-white/10 bg-slate-950/60"
+                    ? "border-accent/40 bg-accent-muted shadow-glow-sm"
+                    : "border-border bg-card"
                 }`}
               >
-                <p className="font-mono text-sm text-cyan-400">{pkg.priceLabel}</p>
-                <h3 className="mt-2 text-xl font-semibold text-white">{pkg.name}</h3>
-                <p className="mt-1 text-sm text-slate-500">{pkg.timeline}</p>
-                <p className="mt-4 text-sm text-slate-400">{pkg.bestFor}</p>
+                <p className="font-mono text-sm text-accent">{pkg.priceLabel}</p>
+                <h3 className="mt-2 text-xl font-semibold text-foreground">{pkg.name}</h3>
+                <p className="mt-1 text-sm text-muted/80">{pkg.timeline}</p>
+                <p className="mt-4 text-sm text-muted">{pkg.bestFor}</p>
                 <ul className="mt-6 flex-1 space-y-3">
                   {pkg.includes.map((line) => (
-                    <li key={line} className="flex gap-2 text-sm text-slate-300">
+                    <li key={line} className="flex gap-2 text-sm text-foreground/85">
                       <Check
-                        className="mt-0.5 h-4 w-4 shrink-0 text-cyan-400"
+                        className="mt-0.5 h-4 w-4 shrink-0 text-accent"
                         aria-hidden
                       />
                       {line}
@@ -139,7 +139,7 @@ export function HirePage() {
                 </ul>
                 <a
                   href={`mailto:${SITE.email}?subject=${encodeURIComponent(pkg.name)}`}
-                  className="mt-8 inline-flex justify-center rounded-full border border-white/15 py-2.5 text-sm font-semibold text-white transition-colors hover:border-cyan-400/40 hover:bg-white/5"
+                  className="mt-8 inline-flex justify-center rounded-lg border border-border py-2.5 text-sm font-semibold text-foreground transition-colors hover:border-accent/40 hover:bg-elevated/60"
                 >
                   Inquire
                 </a>
@@ -149,24 +149,24 @@ export function HirePage() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 py-16 md:py-20">
+      <section className="border-t border-border py-16 md:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h2 className="text-xl font-semibold text-white">Typically not included</h2>
+          <h2 className="text-xl font-semibold text-foreground">Typically not included</h2>
           <ul className="mt-4 space-y-3">
             {OFFERING_NOT_INCLUDED.map((line) => (
-              <li key={line} className="flex gap-2 text-sm text-slate-400">
-                <X className="mt-0.5 h-4 w-4 shrink-0 text-slate-600" aria-hidden />
+              <li key={line} className="flex gap-2 text-sm text-muted">
+                <X className="mt-0.5 h-4 w-4 shrink-0 text-muted/50" aria-hidden />
                 {line}
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-sm text-slate-500">
+          <p className="mt-8 text-sm text-muted/80">
             See shipped examples on the{" "}
-            <Link href="/#work" className="text-cyan-400 hover:underline">
+            <Link href="/#work" className="text-accent hover:underline">
               home page
             </Link>{" "}
             or email{" "}
-            <a href={`mailto:${SITE.email}`} className="text-cyan-400 hover:underline">
+            <a href={`mailto:${SITE.email}`} className="text-accent hover:underline">
               {SITE.email}
             </a>{" "}
             with references and timeline.
